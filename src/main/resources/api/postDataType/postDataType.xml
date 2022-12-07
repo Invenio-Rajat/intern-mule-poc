@@ -1,0 +1,27 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:element name="orders">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element type="xs:string" name="orderId"/>
+                <xs:element type="xs:integer" name="processingDate"/>
+                <xs:element type="xs:integer" name="processingTime"/>
+                <xs:element type="xs:integer" name="noOfRecords"/>
+                <xs:element maxOccurs="unbounded" name="records">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element type="xs:string" name="name"/>
+                            <xs:element type="xs:integer" name="contactNo"/>
+                            <xs:element type="xs:string" name="emailId">
+                                <xs:complexType>
+                                    <xs:simpleContent>
+                                        <xs:extension></xs:extension>
+                                    </xs:simpleContent>
+                                </xs:complexType>
+                            </xs:element>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>
